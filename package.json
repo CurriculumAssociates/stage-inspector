@@ -8,6 +8,9 @@
     "start": "rm -rf dist && NODE_ENV=development webpack",
     "clobber": "rm -rf node_modules/ && npm cache clean --force"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/CurriculumAssociates/stage-inspector.git"
