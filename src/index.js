@@ -471,7 +471,19 @@ export default class StageInspector {
 
       const includeObj = !this._filters || this._checkFilters(obj);
       if (includeObj) {
-        let bounds = obj.getBounds();
+        let bounds;
+        try {
+          if (obj.frameBounds && obj.frameBounds.length > 0 && Number.isInteger(obj.currentFrame) && obj.currentFrame >= obj.frameBounds.length) {
+            // If a createjs.MovieClip is told to gotoAndPlay without being stopped, it will end up with a currentFrame 1 index off the end of the frameBounds array.
+            // That results in getBounds throwing an exception when it tries to copy the frameBounds at the current frame.  So, instead of letting that happen, just use
+            // the last entry in the frameBounds array when that case is detected.
+            bounds = obj.frameBounds[obj.frameBounds.length - 1];
+          } else {
+            bounds = obj.getBounds();
+          }
+        } catch (err) {
+          // ignore, this is mainly for the case of undefined bounds
+        }
         if (!bounds) {
           return;
         }
