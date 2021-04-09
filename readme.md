@@ -9,7 +9,7 @@ This module was developed using the 0.8.2 of CreateJS/EaselJS.
 ## Usage
 Since this is a debugging tool, it is expected to be primarily used through the browser's console.  So, while a consuming project may not need to create or use a StageInspector instance, it should import the module to ensure it's included in the consuming project's bundle and therefore available at runtime.  Such as with:
 ```
-import StageInspector from 'stage-inspector'; // eslint-disable-line no-unused-vars
+import StageInspector from '@curriculumassociates/stage-inspector'; // eslint-disable-line no-unused-vars
 ```
 
 Once the module is imported, instances of the StageInspector class can be created either in that file or in the console since the StageInspector class is made available through `window.StageInspector`.  To create an instance, the CreateJS Stage instance that it should inspect needs to be provided:
