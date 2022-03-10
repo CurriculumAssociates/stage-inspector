@@ -1,6 +1,6 @@
 {
   "name": "@curriculumassociates/stage-inspector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Debugging tool to help figure out layout issues when using CreateJS",
   "main": "dist/stage-inspector.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "babel-preset-react": "6.24.1",
     "file-loader": "1.1.11",
     "url-loader": "1.0.1",
-    "webpack": "4.7.0",
+    "webpack": "4.44.2",
     "webpack-cli": "3.2.3",
     "webpack-node-externals": "1.7.2"
   },
